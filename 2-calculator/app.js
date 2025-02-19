@@ -1,4 +1,3 @@
-const allBtns = document.querySelectorAll(".btn");
 const display = document.querySelector("#display");
 let currentValue = document.querySelector("#display").textContent;
 
