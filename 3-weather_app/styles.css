@@ -1,0 +1,107 @@
+/* Import Google font - Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background: #E3F2FD;
+}
+
+h1 {
+  background: #5372F0;
+  font-size: 1.75rem;
+  text-align: center;
+  padding: 18px 0;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allow elements to wrap to next line */
+  justify-content: center; /* Center items horizontally */
+  gap: 35px;
+  padding: 30px;
+}
+
+.weather-input {
+  width: 100%; /* Occupy full width on small screens */
+}
+
+.weather-input input {
+  height: 46px;
+  width: 100%;
+  outline: none;
+  font-size: 1.07rem;
+  padding: 0 17px;
+  margin: 10px 0 20px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.weather-input input:focus {
+  padding: 0 16px;
+  border: 2px solid #5372F0;
+}
+
+.weather-input .separator {
+  display: none; /* Hide separator on small screens */
+}
+
+.weather-input button,
+.weather-input .location-btn {
+  width: 100%;
+}
+
+.weather-data {
+  width: 100%;
+}
+
+.weather-data .current-weather {
+  color: #fff;
+  background: #5372F0;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Stack details vertically on small screens */
+}
+
+.current-weather h2 {
+  font-weight: 700;
+  font-size: 1.5rem; /* Decrease font size for better readability on small screens */
+}
+
+.weather-data h6 {
+  font-size: 0.9rem; /* Decrease font size for better readability on small screens */
+}
+
+.weather-cards {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to next line */
+  justify-content: space-between; /* Evenly distribute cards on larger screens */
+}
+
+.weather-cards .card {
+  width: calc(50% - 10px); /* Occupy half width on small screens */
+  margin-bottom: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px; /* Decrease padding on small screens */
+  }
+
+  .weather-input {
+    width: 100%;
+  }
+
+  .weather-cards .card {
+    width: 100%; /* Occupy full width on small screens */
+  }
+}
