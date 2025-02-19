@@ -18,3 +18,9 @@ function clearDisplay() {
   currentValue = 0;
   display.textContent = currentValue;
 }
+
+function deleteNumber() {
+  const newStr = display.textContent.slice(0, -1);
+  currentValue = newStr;
+  display.textContent = currentValue;
+}
