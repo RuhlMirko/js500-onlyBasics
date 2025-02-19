@@ -13,3 +13,8 @@ function compute() {
   currentValue = eval(sanitizedExpression);
   display.textContent = currentValue;
 }
+
+function clearDisplay() {
+  currentValue = 0;
+  display.textContent = currentValue;
+}
