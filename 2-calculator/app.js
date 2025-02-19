@@ -8,7 +8,8 @@ function appendNumber(pressed) {
 }
 
 function compute() {
-  const result = eval(display.textContent);
-  currentValue = result;
-  display.textContent = result;
+  const expression = currentValue;
+  const sanitizedExpression = expression.replace(/\b0+(\d+)/g, "$1");
+  currentValue = eval(sanitizedExpression);
+  display.textContent = currentValue;
 }
