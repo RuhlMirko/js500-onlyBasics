@@ -17,9 +17,18 @@ function getWeather() {
     })
     .then((data) => {
       console.log("Weather Data:", data);
-      console.log(
-        `Temperature: ${data.main.temp}\nWind: ${data.wind.speed}\nHumidity: ${data.main.humidity}`
-      );
+      const countryCity = data.sys.country;
+      const temp = data.main.temp;
+      const wind = data.wind.speed;
+      const humidity = data.main.humidity;
+      document.getElementById(
+        "city-name"
+      ).textContent = `${city} (${countryCity})`;
+      document.getElementById("temp").textContent = `Temperature: ${temp}°C`;
+      document.getElementById("wind").textContent = `Wind: ${wind} M/S`;
+      document.getElementById(
+        "humidity"
+      ).textContent = `Humidity: ${humidity} %`;
     })
     .catch((error) => {
       console.error("Error fetching weather data:", error);
