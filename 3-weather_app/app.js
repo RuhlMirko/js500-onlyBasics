@@ -50,6 +50,22 @@ function getWeatherByLocation() {
         })
         .then((data) => {
           console.log(data);
+          const countryCity = data.sys.country;
+          const city = data.name;
+          const temp = data.main.temp / 10;
+          const wind = data.wind.speed;
+          const humidity = data.main.humidity;
+
+          document.getElementById(
+            "city-name"
+          ).textContent = `${city} (${countryCity})`;
+          document.getElementById(
+            "temp"
+          ).textContent = `Temperature: ${temp}°C`;
+          document.getElementById("wind").textContent = `Wind: ${wind} M/S`;
+          document.getElementById(
+            "humidity"
+          ).textContent = `Humidity: ${humidity} %`;
         });
     });
   }
