@@ -1,20 +1,20 @@
 /* Import Google font - Open Sans */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
 
 /* Global styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
-  background: #E3F2FD;
+  background: #e3f2fd;
 }
 
 h1 {
-  background: #5372F0;
+  background: #5372f0;
   font-size: 1.75rem;
   text-align: center;
   padding: 18px 0;
@@ -46,7 +46,7 @@ h1 {
 
 .weather-input input:focus {
   padding: 0 16px;
-  border: 2px solid #5372F0;
+  border: 2px solid #5372f0;
 }
 
 .weather-input .separator {
@@ -64,7 +64,7 @@ h1 {
 
 .weather-data .current-weather {
   color: #fff;
-  background: #5372F0;
+  background: #5372f0;
   border-radius: 5px;
   padding: 20px;
   display: flex;
@@ -89,6 +89,21 @@ h1 {
 .weather-cards .card {
   width: calc(50% - 10px); /* Occupy half width on small screens */
   margin-bottom: 20px;
+}
+
+#custom {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  margin: 20px;
+}
+#custom button {
+  padding: 10px;
+  font-size: 1.3rem;
+  background-color: #2f79ce;
+  color: #e3f2fd;
+  border: solid 0px;
+  border-radius: 5px;
 }
 
 /* Media queries for responsiveness */
