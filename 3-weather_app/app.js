@@ -1,10 +1,9 @@
-const weatherK = "0c2175004f148b0c48c7fd2d50960ef8";
+const apiKey = "0c2175004f148b0c48c7fd2d50960ef8";
 
 const cityEntry = document.getElementById("city");
 const searchBtn = document.querySelector("search-btn");
 
 function getWeather() {
-  const apiKey = weatherK;
   const city = cityEntry.value;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -33,4 +32,25 @@ function getWeather() {
     .catch((error) => {
       console.error("Error fetching weather data:", error);
     });
+}
+
+function getWeatherByLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const lat = position.coords.latitude;
+      const long = position.coords.longitude;
+      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`;
+
+      fetch(url)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+        });
+    });
+  }
 }
