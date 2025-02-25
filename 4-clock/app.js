@@ -16,4 +16,13 @@ function updateTime() {
   console.log(`${hours}:${minutes}:${seconds}`); // e.g., "14:30:15"
 }
 
+function changeToDark() {
+  const body = document.querySelector("body");
+  body.classList.add("dark");
+}
+
 setInterval(updateTime, 1000); // Run updateTime() every second
+
+// Dark mode
+const darkThemeBtn = document.querySelector(".mode-switch");
+darkThemeBtn.addEventListener("click", changeToDark);
