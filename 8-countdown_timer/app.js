@@ -21,3 +21,19 @@ for (let i = start; i <= end; i++) {
   selectMinutes.appendChild(createOption(i));
   selectSeconds.appendChild(createOption(i));
 }
+
+var values = [];
+function startCount() {
+  values = [selectHours, selectMinutes, selectSeconds].map((el) =>
+    Number(el.value)
+  );
+  console.log(values);
+  setInterval(countDown, 1000);
+}
+function countDown() {
+  values[0] -= 1;
+  console.log(values);
+}
+
+const startBtn = document.getElementById("startStop");
+startBtn.addEventListener("click", startCount);
