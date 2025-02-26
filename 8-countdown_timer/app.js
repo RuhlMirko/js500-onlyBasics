@@ -5,6 +5,7 @@ const selectMinutes = document.querySelector(".countdown__selector--minutes");
 const selectSeconds = document.querySelector(".countdown__selector--seconds");
 
 const timerDisplay = document.getElementById("timer");
+const clearBtn = document.getElementById("clear");
 
 function createOption(value) {
   const option = document.createElement("option");
@@ -24,15 +25,22 @@ for (let i = start; i <= end; i++) {
   selectSeconds.appendChild(createOption(i));
 }
 
-var values = [];
+let values = [];
+let intervalId = null;
+
 function startCount() {
   values = [selectHours, selectMinutes, selectSeconds].map((el) =>
     Number(el.value)
   );
-  console.log(values);
-  setInterval(countDown, 1000);
+  if (intervalId) clearInterval(intervalId);
+  intervalId = setInterval(countDown, 1000);
 }
+
 function countDown() {
+  if (values.every((num) => num === 0)) {
+    clearInterval(intervalId);
+    return;
+  }
   if (values[2]-- === 0) {
     values[2] = 59;
     if (values[1]-- === 0) {
@@ -41,8 +49,19 @@ function countDown() {
     }
   }
 
-  timerDisplay.textContent = values.join(":");
+  timerDisplay.textContent = values
+    .map((num) => String(num).padStart(2, "0"))
+    .join(":");
+}
+
+function clear() {
+  clearInterval(intervalId);
+  values = values.map(() => 0);
+  timerDisplay.textContent = values
+    .map((num) => String(num).padStart(2, "0"))
+    .join(":");
 }
 
 const startBtn = document.getElementById("startStop");
 startBtn.addEventListener("click", startCount);
+clearBtn.addEventListener("click", clear);
