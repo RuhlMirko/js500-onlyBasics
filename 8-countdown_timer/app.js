@@ -4,6 +4,8 @@ const selectHours = document.querySelector(".countdown__selector--hours");
 const selectMinutes = document.querySelector(".countdown__selector--minutes");
 const selectSeconds = document.querySelector(".countdown__selector--seconds");
 
+const timerDisplay = document.getElementById("timer");
+
 function createOption(value) {
   const option = document.createElement("option");
   option.value = value;
@@ -31,8 +33,15 @@ function startCount() {
   setInterval(countDown, 1000);
 }
 function countDown() {
-  values[0] -= 1;
-  console.log(values);
+  if (values[2]-- === 0) {
+    values[2] = 59;
+    if (values[1]-- === 0) {
+      values[1] = 59;
+      values[0]--;
+    }
+  }
+
+  timerDisplay.textContent = values.join(":");
 }
 
 const startBtn = document.getElementById("startStop");
