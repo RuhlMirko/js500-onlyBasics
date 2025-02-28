@@ -33,10 +33,10 @@ function startCount() {
     Number(el.value)
   );
   if (intervalId) clearInterval(intervalId);
-  intervalId = setInterval(countDown, 1000);
+  intervalId = setInterval(workCycle, 1000);
 }
 
-function countDown() {
+function workCycle() {
   if (values.every((num) => num === 0)) {
     clearInterval(intervalId);
     return;
