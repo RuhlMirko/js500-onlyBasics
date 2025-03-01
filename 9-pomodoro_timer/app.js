@@ -1,4 +1,5 @@
 "use strict";
+MicroModal.init();
 
 const startBtn = document.querySelector("#startStop");
 
