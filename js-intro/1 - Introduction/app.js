@@ -13,3 +13,4 @@ let b = +prompt("Second number?", 2);
 alert(a + b); // 12
 
 console.log("new test");
+console.log("Newer test");
