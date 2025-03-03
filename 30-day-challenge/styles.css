@@ -1,5 +1,7 @@
 body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -7,6 +9,9 @@ body {
 
 div {
   margin-top: 0 auto;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
 }
 
 button {
