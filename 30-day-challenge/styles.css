@@ -5,6 +5,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: linear-gradient(#888, #444);
+}
+
+h1 {
+  color: white;
+  font-size: 4rem;
 }
 
 div {
@@ -17,7 +23,8 @@ div {
 button {
   padding: 15px 20px;
   border-radius: 5px;
-  background-color: rgb(66, 179, 245);
-  border: solid 0px;
+  background: linear-gradient(#f93 35%, #210);
+  color: white;
+  border: solid 1px black;
   font-size: 2rem;
 }
