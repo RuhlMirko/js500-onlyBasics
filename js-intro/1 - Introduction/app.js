@@ -25,4 +25,22 @@ userInput > 0
   : userInput == 0
   ? alert(0)
   : alert(null);
+
+let result;
+let a = prompt("Enter a number");
+let b = prompt("Enter a number");
+
+result = a + b < 4 ? "Below" : "Over";
+console.log(result);
 */
+let message;
+let login = prompt("Enter login");
+message =
+  login == "Employee"
+    ? "hello"
+    : login == "Director"
+    ? "Greetings"
+    : login == ""
+    ? "No login"
+    : "";
+console.log(message);
