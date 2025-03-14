@@ -1,0 +1,30 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #eeeeee;
+}
+
+h1 {
+  color: white;
+  font-size: 4rem;
+}
+
+div {
+  margin-top: 0 auto;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+button {
+  padding: 15px 20px;
+  border-radius: 5px;
+  background: #fc3;
+  color: #000;
+  border: solid 1px #f93;
+  font-size: 2rem;
+}
