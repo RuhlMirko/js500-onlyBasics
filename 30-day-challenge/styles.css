@@ -5,7 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(#888, #444);
+  background: #888;
 }
 
 h1 {
@@ -23,7 +23,7 @@ div {
 button {
   padding: 15px 20px;
   border-radius: 5px;
-  background: linear-gradient(#f93 35%, #210);
+  background: #f93;
   color: white;
   border: solid 1px black;
   font-size: 2rem;
