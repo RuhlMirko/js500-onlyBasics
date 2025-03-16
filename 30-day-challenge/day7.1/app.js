@@ -8,7 +8,9 @@
 var filter = function (arr, fn) {
   const itemList = [];
   for (const i in arr) {
-    itemList.push(fn(arr[i], Number(i)));
+    if (fn(arr[i], Number(i))) {
+      itemList.push(arr[i]);
+    }
   }
   return itemList;
 };
