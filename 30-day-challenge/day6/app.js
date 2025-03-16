@@ -6,6 +6,7 @@
 var map = function (arr, fn) {
   const res = [];
   for (const ind in arr) {
+    console.log(ind);
     res.push(fn(arr[ind], Number(ind)));
   }
   return res;
